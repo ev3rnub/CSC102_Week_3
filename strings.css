@@ -1,0 +1,161 @@
+/* Base page styling – dark background, aqua text */
+html, body {
+    height: 100%;                     /* allow flex container to fill viewport */
+    margin: 0;
+    padding: 0;
+    background-color: black;   
+    color: aqua;                   /* pure aqua */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Flex container to center the content horizontally and keep it at the top (flex-start) */
+body {
+    display: flex;
+    justify-content: center;          /* horizontal centering */
+    align-items: flex-start;          /* top alignment */
+}
+
+/* Title and subtitle */
+.titleWrapper {
+    margin-top: 10rem;                 /* distance from the very top of the page */
+    width: 100%;
+    max-width: 400px;                 /* limit width for larger screens */
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* margin‑top to give a little breathing room */
+.formWrapper {
+    margin-top: 2rem;                 /* distance from the very top of the page */
+    width: 100%;
+    max-width: 400px;                 /* limit width for larger screens */
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form element styling */
+form {
+    display: flex;
+    flex-direction: column;           /* stack labels/inputs vertically */
+}
+
+/* Labels – keep the aqua color and add spacing */
+label {
+    margin-bottom: 0.3rem;
+}
+
+/* Inputs – dark background, aqua text, subtle border */
+input[type="text"] {
+    background-color: #1e1e1e;
+    color: #00ffff;
+    border: 1px solid #00aaaa;
+    border-radius: 4px;
+    padding: 0.4rem;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+/* Input focus – brighter border for better UX */
+input[type="text"]:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 5px rgba(0,255,255,0.5);
+}
+
+/* Submit button – keep the aqua theme but make it pop */
+input[type="button"] {
+    background-color: #005555;
+    color: aqua;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+/* Submit hover/focus */
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: #006666;
+}
+
+/* Remove the default blue outline on the button (optional) */
+input[type="submit"]:focus {
+    outline: 2px solid aqua;
+}
+
+.titleWrapper {
+  position: relative;               /* needed for absolute positioning */
+  padding: 2rem;                    /* give the content some breathing room */
+  max-width: 600px;
+  background: black;                 /* dark background – change as you like */
+  color: aqua;
+  overflow: hidden;                 /* hide the line while it turns the corner */
+  border-radius: 8px;               /* makes the animation follow the curve */
+}
+
+/* -- The “dash” – a thin coloured line that will travel the border -- */
+.titleWrapper::after {
+  content: "";
+  position: absolute;
+  width: 40px;          /* length of the dash */
+  height: 2px;          /* thickness of the dash */
+  background: #0ff;    /* colour – adjust to your palette */
+  border-radius: 2px;  /* makes the ends slightly rounded (optional) */
+
+  /* start the animation */
+  animation: dash-around 4s linear infinite;
+}
+
+/* -- Keyframes – path the dash follows -- */
+@keyframes dash-around {
+  /* 0% – top‑left corner, moving right */
+  0%   { top: 0; left: 0; transform: translateX(0) rotate(0deg); }
+
+  /* 25% – top‑right corner, moving down */
+  25%  { top: 0; left: calc(100% - 40px); transform: translateX(0) rotate(90deg); }
+
+  /* 50% – bottom‑right corner, moving left */
+  50%  { top: calc(100% - 2px); left: calc(100% - 40px); 
+         transform: translateX(0) rotate(180deg); }
+
+  /* 75% – bottom‑left corner, moving up */
+  75%  { top: calc(100% - 2px); left: 0; 
+         transform: translateX(0) rotate(270deg); }
+
+  /* 100% – back to start */
+  100% { top: 0; left: 0; transform: translateX(0) rotate(360deg); }
+}
+
+/* -- The inner content -- */
+.titleBorderEffect > div {
+  text-align: center;
+}
+.titleBorderEffect h1 {
+  margin: 0 0 .5rem;
+  font-size: 1.8rem;
+}
+.titleBorderEffect h3 {
+  margin: 0;
+  font-weight: normal;
+  opacity: .8;
+}
+
+/* default – keep the “aqua” theme */
+#requestorsName {
+    color: aqua;               /* inherits from body, but we make it explicit */
+}
+
+/* error state – red text */
+#requestorsName.error {
+    color: red;            /* bright red that still shows up on a black bg */
+}
+
+/* “ok” state */
+#requestorsName.valid {
+    color: rgb(8, 238, 8);
+}

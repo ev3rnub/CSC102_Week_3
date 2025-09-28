@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- char encoding -->
+    <meta charset="UTF-8">
+    <!-- define viewprt -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="strings.css"> 
+    <!-- Javascript -->
+    <script src="stringsCheck.js" defer></script>
+    <!-- tab name/doc name -->
+    <title>Secret Form</title>
+</head>
+<body>
+    <section class="titleWrapper">
+        <div class="titleBorderEffect">
+            <div>
+                <h1 id="aTitle">Secret Form access request</h1>
+                <h3 id="aSubTitle">Enter your first name, last name and zipcode.</h3>
+                <h4 id="requestorsName"> <!-- Placeholder text--> </h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="formWrapper">
+        <form>
+            <label class="fnameLabel" for="fname">First name:</label><br>
+            <input class="fnameInput" type="text" id="fname" name="fname"><br>
+            <label class="lnameLabel" for="lname">Last name:</label><br>
+            <input class="lnameInput" type="text" id="lname" name="lname"><br>
+            <label class="zcodeLabel" for="zipCode">ZipCode:</label><br>
+            <input class="zCodeInput" type="text" id="zipCode" name="aZipCode"><br>
+            <input class="submitButton" onclick="parseInput()" type="button" value="Submit">
+        </form>
+    </section>
+    
+</body>
+</html>
