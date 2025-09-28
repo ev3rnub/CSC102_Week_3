@@ -1,3 +1,7 @@
+// Chad Verbus
+// CSC102
+// 09/27/2025
+
 function parseInput(){
     const firstName = document.getElementById("fname").value.trim();
     const lastName  = document.getElementById("lname").value.trim();
