@@ -27,7 +27,7 @@ function parseInput(){
         return;                                 // stop further processing
     }
 
-    // ---- 3️⃣ Validate name length ---------------------------------------
+    // ---- Validate name length ---------------------------------------
     if (fullName.length > 20){
         requestorsName.textContent = "Name must be ≤ 20 characters";
         requestorsName.classList.add("error");
@@ -37,7 +37,7 @@ function parseInput(){
         return;
     }
 
-    // ---- 4️⃣ All good – show the name ------------------------------------
+    // ---- Success – show the name ------------------------------------
     requestorsName.textContent = `Access Granted to ${fullName} @ ${zipCode}`;
     requestorsName.classList.add("valid");   // (optional) force aqua again
     afirstName.classList.add("valid");
