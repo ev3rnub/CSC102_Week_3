@@ -29,7 +29,7 @@ function parseInput(){
 
     // ---- Validate name length ---------------------------------------
     if (fullName.length > 20){
-        requestorsName.textContent = "Name must be ≤ 20 characters";
+        requestorsName.textContent = "Full Name (First Name + Last name) must be ≤ 20 characters";
         requestorsName.classList.add("error");
         afirstName.classList.add("error");
         alastName.classList.add("error");

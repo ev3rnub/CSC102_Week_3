@@ -92,60 +92,60 @@ input[type="submit"]:focus {
 }
 
 .titleWrapper {
-  position: relative;               /* needed for absolute positioning */
-  padding: 2rem;                    /* give the content some breathing room */
-  max-width: 600px;
-  background: black;                 /* dark background – change as you like */
-  color: aqua;
-  overflow: hidden;                 /* hide the line while it turns the corner */
-  border-radius: 8px;               /* makes the animation follow the curve */
+    position: relative;               /* needed for absolute positioning */
+    padding: 2rem;                    /* give the content some breathing room */
+    max-width: 600px;
+    background: black;                 /* dark background – change as you like */
+    color: aqua;
+    overflow: hidden;                 /* hide the line while it turns the corner */
+    border-radius: 8px;               /* makes the animation follow the curve */
 }
 
 /* -- The “dash” – a thin coloured line that will travel the border -- */
 .titleWrapper::after {
-  content: "";
-  position: absolute;
-  width: 40px;          /* length of the dash */
-  height: 2px;          /* thickness of the dash */
-  background: #0ff;    /* colour – adjust to your palette */
-  border-radius: 2px;  /* makes the ends slightly rounded (optional) */
+    content: "";
+    position: absolute;
+    width: 40px;          /* length of the dash */
+    height: 2px;          /* thickness of the dash */
+    background: #0ff;    /* colour – adjust to your palette */
+    border-radius: 2px;  /* makes the ends slightly rounded (optional) */
 
-  /* start the animation */
-  animation: dash-around 4s linear infinite;
+    /* start the animation */
+    animation: dash-around 4s linear infinite;
 }
 
 /* -- Keyframes – path the dash follows -- */
 @keyframes dash-around {
-  /* 0% – top‑left corner, moving right */
-  0%   { top: 0; left: 0; transform: translateX(0) rotate(0deg); }
+    /* 0% – top‑left corner, moving right */
+    0%   { top: 0; left: 0; transform: translateX(0) rotate(0deg); }
 
-  /* 25% – top‑right corner, moving down */
-  25%  { top: 0; left: calc(100% - 40px); transform: translateX(0) rotate(90deg); }
+    /* 25% – top‑right corner, moving down */
+    25%  { top: 0; left: calc(100% - 40px); transform: translateX(0) rotate(90deg); }
 
-  /* 50% – bottom‑right corner, moving left */
-  50%  { top: calc(100% - 2px); left: calc(100% - 40px); 
-         transform: translateX(0) rotate(180deg); }
+    /* 50% – bottom‑right corner, moving left */
+    50%  { top: calc(100% - 2px); left: calc(100% - 40px); 
+            transform: translateX(0) rotate(180deg); }
 
-  /* 75% – bottom‑left corner, moving up */
-  75%  { top: calc(100% - 2px); left: 0; 
-         transform: translateX(0) rotate(270deg); }
+    /* 75% – bottom‑left corner, moving up */
+    75%  { top: calc(100% - 2px); left: 0; 
+            transform: translateX(0) rotate(270deg); }
 
-  /* 100% – back to start */
-  100% { top: 0; left: 0; transform: translateX(0) rotate(360deg); }
+    /* 100% – back to start */
+    100% { top: 0; left: 0; transform: translateX(0) rotate(360deg); }
 }
 
 /* -- The inner content -- */
 .titleBorderEffect > div {
-  text-align: center;
+    text-align: center;
 }
 .titleBorderEffect h1 {
-  margin: 0 0 .5rem;
-  font-size: 1.8rem;
+    margin: 0 0 .5rem;
+    font-size: 1.8rem;
 }
 .titleBorderEffect h3 {
-  margin: 0;
-  font-weight: normal;
-  opacity: .8;
+    margin: 0;
+    font-weight: normal;
+    opacity: .8;
 }
 
 /* default – keep the “aqua” theme */
